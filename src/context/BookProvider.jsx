@@ -36,14 +36,14 @@ const BookProvider = ({ children }) => {
       return;
     }
 
-    const isExistBook = wishList.find(
-      (book) => book.bookId === currentBook.bookId,
-    );
+    const isExistBook = wishList.find((book) => console.log(book));
+    // book.bookId === currentBook.bookId,
+    console.log(wishList);
 
     if (isExistBook) {
       toast.warn("The book is already added to wishlist");
     } else {
-      setStoredBooks([...wishList, currentBook]);
+      setWishList([...wishList, currentBook]);
       toast(`${currentBook.bookName} added to wishlist.`);
     }
   };
